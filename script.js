@@ -12,4 +12,19 @@ const firebaseConfig = {
   firebase.initializeApp(firebaseConfig)
   let database = firebase.firestore()
 
-database.collection("")
+
+
+
+
+
+  
+// catching data from collection "data-glucose" with js
+
+// database.collection("data-glucose").get()
+//                                     .then((snapshot) => {
+//                                         snapshot.forEach((doc) => {
+//                                             let personData = doc.data()
+//                                             console.log(personData.name);
+//                                         })
+//                                     })
+
