@@ -9,10 +9,19 @@ const firebaseConfig = {
     measurementId: "G-ZKCP3XVJ8K"
   };
   
-  firebase.initializeApp(firebaseConfig)
-  let database = firebase.firestore()
 
+firebase.initializeApp(firebaseConfig)
+let database = firebase.firestore()
 
+//add data of new peaple in firebase
+database.collection("data-glucose").doc("new-person").set({
+  name: "teste",
+  glucose: 23
+}).then(() => {
+  console.log("Informações inseridas com sucesso");
+}).catch(err=>{ 
+  console.log(err);
+})
 
 
 
