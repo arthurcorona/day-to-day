@@ -13,6 +13,25 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig)
 let database = firebase.firestore()
 
+
+// create user
+
+let newUserEmail = "novoteste@teste.com"
+let newUserPassword = "12345678"
+
+firebase.auth().createUserWithEmailAndPassword(newUserEmail, newUserPassword)
+      .then(user => {
+        console.log(user);
+      }).catch(error => {
+        console.log(error);
+      })
+
+
+
+
+
+
+
 //add data of new peaple in firebase
 database.collection("data-glucose").doc("new-person").update({
   name: "teste",
@@ -22,6 +41,28 @@ database.collection("data-glucose").doc("new-person").update({
 }).catch(err=>{ 
   console.log(err);
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+//catching selecteds glucoses in real time
+
+// database.colletion("data-gluose").where("glucose", ">", "75").onSnapshot()
+//     .then(snapshot => {
+//       snapshot.forEah((doc) => {
+//         let person = doc.data()
+//         console.log(person.name, person.glucose);
+//       })
+//     })
 
 
 
