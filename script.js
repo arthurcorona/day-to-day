@@ -14,7 +14,7 @@ firebase.initializeApp(firebaseConfig)
 let database = firebase.firestore()
 
 //add data of new peaple in firebase
-database.collection("data-glucose").doc("new-person").set({
+database.collection("data-glucose").doc("new-person").update({
   name: "teste",
   glucose: 23
 }).then(() => {
@@ -37,3 +37,18 @@ database.collection("data-glucose").doc("new-person").set({
 //                                         })
 //                                     })
 
+
+
+// catch name and glucose and sending to the firebase
+// after "writen", n=name  g=glucose 
+
+let writen = ""
+let writeg = ""
+
+function sendName() {
+  writen = document.getElementById("name-person").value
+  document.getElementById("writen").innerHTML = writen  
+  //glucose
+  writeg = document.getElementById("glucose-person").value
+  document.getElementById("writeg").innerHTML = writeg
+}

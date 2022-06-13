@@ -11,9 +11,14 @@ gravando a glicose delas, e avisando quando estiver baixa/quando deve comer -->
     <title>Diabetes Monitor</title>
 </head>
 <body>
-    <input type="text">
-    
+    <input id="name-person" type="text" name="" value="">
+    <input id="glucose-person" type="number" name="" value="">
 
+    <input type="submit" onclick="sendName()">
+
+    <h2 id="writen"></h2>
+    <h2 id="writeg"></h2>
+    
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <script src="./script.js"></script>
