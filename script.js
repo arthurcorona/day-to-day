@@ -14,21 +14,56 @@ firebase.initializeApp(firebaseConfig)
 let database = firebase.firestore()
 
 
-// create user
-
-let newUserEmail = "novoteste@teste.com"
-let newUserPassword = "12345678"
-
-firebase.auth().createUserWithEmailAndPassword(newUserEmail, newUserPassword)
-      .then(user => {
-        console.log(user);
-      }).catch(error => {
-        console.log(error);
-      })
 
 
+// function createUser{
+
+// // create user
+
+// let newUserEmail = "novoteste@teste.com"
+// let newUserPassword = "12345678"
+
+// firebase.auth().createUserWithEmailAndPassword(newUserEmail, newUserPassword)
+//       .then(user => {
+//         console.log(user);
+//       }).catch(error => {
+//         console.log(error);
+//       })
+
+//     }
 
 
+
+
+// show user online and offline:
+
+// function login() {
+
+//   let UserEmail = "novoteste@teste.com"
+//   let UserPassword = "12345678"
+
+//   auth.signInWithEmailAndPassword(UserEmail, UserPassword)
+//       .then(loggedUser => {
+//         console.log(auth.currentUser);
+//       }).catch(error => {
+//         console.log(error);
+//       })
+// }
+// login()
+
+//
+
+// function logout() {
+//   auth.signOut().then().catch(error => {
+//     console.log(error);
+//     })
+// }
+
+// setTimeout(logout, 2000)
+
+
+  let userOnline = auth.currentUser
+  console.log(userOnline);
 
 
 
