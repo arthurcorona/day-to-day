@@ -37,29 +37,34 @@ let database = firebase.firestore()
 
 // show user online and offline:
 
-// function login() {
+function login() {
 
-//   let UserEmail = "novoteste@teste.com"
-//   let UserPassword = "12345678"
+  let UserEmail = "novoteste@teste.com"
+  let UserPassword = "12345678"
+                                                            
+  auth.setPersistence(firebase.auth.Auth.Persistence.Local).then(() => {
 
-//   auth.signInWithEmailAndPassword(UserEmail, UserPassword)
-//       .then(loggedUser => {
-//         console.log(auth.currentUser);
-//       }).catch(error => {
-//         console.log(error);
-//       })
-// }
-// login()
+    auth.signInWithEmailAndPassword(UserEmail, UserPassword)
+    .then(loggedUser => {
+      console.log(auth.currentUser);
+    }).catch(error => {
+      console.log(error);
+    })
+  }).catch(error => {
+      console.log(error);
+  })  
 
-//
+}
+login()
 
-// function logout() {
-//   auth.signOut().then().catch(error => {
-//     console.log(error);
-//     })
-// }
 
-// setTimeout(logout, 2000)
+function logout() {
+  auth.signOut().then().catch(error => {
+    console.log(error);
+    })
+}
+
+setTimeout(logout, 2000)
 
 
   let userOnline = auth.currentUser
