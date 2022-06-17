@@ -1,4 +1,3 @@
-
 <!-- um app/site que ira monitorar a glicose de pessoas diabeticas, 
 gravando a glicose delas, e avisando quando estiver baixa/quando deve comer -->
 
@@ -12,20 +11,27 @@ gravando a glicose delas, e avisando quando estiver baixa/quando deve comer -->
     <title>Diabetes Monitor</title>
 </head>
 <body>
-    <div id="box-cadastro" class="box-login">
-        <input id="new-email" type="text" name="email" value="email">
-        <input id="new-name" type="text" name="name" value="name"> 
-        <input id="new-password" type="text" name="password" value="password">
-        <input type="submit" onclick="createUser()">
-    </div>
+    <div id="container">
 
-    <div id="box-login" class="box-login">
-        <input id="email" type="text" name="email" value="email">
-        <input id="name" type="text" name="name" value="email">
-        <input id="password" type="text" name="password" value="password">
-        <input type="submit" onclick="login()">
-    </div>
+        <div id="box-cadastro" class="tela-login">
 
+            <h2 class="subtitle">Sign Up</h2>
+            <input id="new-name" type="text" name="name" value="name">
+            <input id="new-email" type="email" name="email" value="email"> 
+            <input id="new-password" type="password" name="password" value="password">
+            <p>Já tem uma conta?? <b class="click" onclick="entre()">Entre</b></p>
+            <input class="input-submit" type="submit" onclick="createUser()">
+        </div>
+
+        <div id="box-login" class="tela-login">
+            <h2 class="subtitle">Login</h2>
+            <input id="name" type="text" name="name" value="name">
+            <input id="email" type="email" name="email" value="email">
+            <input id="password" type="password" name="password" value="password">
+            <input class="input-submit" type="submit" onclick="login()">
+        </div>
+
+    </div>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <script src="./script.js"></script>
