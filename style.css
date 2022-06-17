@@ -1,17 +1,69 @@
 *{
-    background-color: gray;
+    padding: 0px;
+    margin: 0px;
 }
 
-#box-cadastro{
-    display: ;
+body{
+    display: relative;
+    background-color: rgb(207, 207, 152);
 }
 
-.box-login{
+#container {
+    display: flex;
+    align-items: center;
+}
+
+.tela-login{
     width: 200px;
+    background-color: aqua;
     border-radius: 15px;
     padding: 20px;
     margin: 5%;
     display: block;
     margin-right: auto;
     margin-left: auto;
+    display: absolute;
+}
+
+.click{
+    text-decoration: underline;
+}
+
+.click:hover {
+    cursor: pointer;
+}
+
+.subtitle{
+    margin-bottom: 5px;
+    text-align  : center;
+}
+
+#box-login{
+    display: none;
+}
+
+input{
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+}
+
+.input-submit {
+    background-color: orangered;
+}
+
+.input-submit:hover {
+    background-color: orange;
+}
+
+input:hover {
+    background-color: rgb(136, 148, 199);
+}
+
+#box-cadastro {
+    
+}
+
+#box-login {
+    
 }
