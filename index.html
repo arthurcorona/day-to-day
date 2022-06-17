@@ -1,8 +1,9 @@
+
 <!-- um app/site que ira monitorar a glicose de pessoas diabeticas, 
 gravando a glicose delas, e avisando quando estiver baixa/quando deve comer -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,15 +12,20 @@ gravando a glicose delas, e avisando quando estiver baixa/quando deve comer -->
     <title>Diabetes Monitor</title>
 </head>
 <body>
-    <div id="cadastro">
-        <input id="name-person" type="text" name="" value="">
-        <input id="glucose-person" type="number" name="" value="">
-        <input type="submit" onclick="sendName()">
+    <div id="box-cadastro" class="box-login">
+        <input id="new-email" type="text" name="email" value="email">
+        <input id="new-name" type="text" name="name" value="name"> 
+        <input id="new-password" type="text" name="password" value="password">
+        <input type="submit" onclick="createUser()">
     </div>
-    
-    <h2 id="writen"></h2>
-    <h2 id="writeg"></h2>
-    
+
+    <div id="box-login" class="box-login">
+        <input id="email" type="text" name="email" value="email">
+        <input id="name" type="text" name="name" value="email">
+        <input id="password" type="text" name="password" value="password">
+        <input type="submit" onclick="login()">
+    </div>
+
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <script src="./script.js"></script>
