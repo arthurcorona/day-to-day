@@ -1,0 +1,17 @@
+*{
+    background-color: gray;
+}
+
+#box-cadastro{
+    display: ;
+}
+
+.box-login{
+    width: 200px;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 5%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
