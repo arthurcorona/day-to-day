@@ -1,85 +1,85 @@
 // firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyBjgUEn24Luyx2y_kFEH1QwnWKoNyEOFmI",
-    authDomain: "diabetes-c30af.firebaseapp.com",
-    projectId: "diabetes-c30af",
-    storageBucket: "diabetes-c30af.appspot.com",
-    messagingSenderId: "546363987043",
-    appId: "1:546363987043:web:bad1ae1848b37ddfb65456",
-    measurementId: "G-ZKCP3XVJ8K"
-  };
-  
+  apiKey: "AIzaSyBjgUEn24Luyx2y_kFEH1QwnWKoNyEOFmI",
+  authDomain: "diabetes-c30af.firebaseapp.com",
+  projectId: "diabetes-c30af",
+  storageBucket: "diabetes-c30af.appspot.com",
+  messagingSenderId: "546363987043",
+  appId: "1:546363987043:web:bad1ae1848b37ddfb65456",
+  measurementId: "G-ZKCP3XVJ8K"
+}
 
 firebase.initializeApp(firebaseConfig)
 let database = firebase.firestore()
 
+// //create new user in firebase
 
+//function createUser() {
+  // let newUserEmail = "novoteste@teste.com"
+  // let newUserPassword = "12345678"  
+ 
+  // firebase.auth().createUserWithEmailAndPassword(newUserEmail, newUserPassword)
+  //       .then(user => {
+  //         console.log(user);
+  //       }).catch(error => {
+  //         alert("A senha deve conter no minímo 6 caracteres")
 
+  //       })
+//}
 
-// function createUser{
+// // function que vai mostrar a tela de login
 
-// // create user
-
-// let newUserEmail = "novoteste@teste.com"
-// let newUserPassword = "12345678"
-
-// firebase.auth().createUserWithEmailAndPassword(newUserEmail, newUserPassword)
-//       .then(user => {
-//         console.log(user);
-//       }).catch(error => {
-//         console.log(error);
-//       })
-
-//     }
-
-
+function entre() {
+  document.getElementById("box-login").style.display = 'inline-block'  
+  document.getElementById("box-cadastro").style.display = 'none'
+}
 
 
 // show user online and offline:
 
 function login() {
 
-  let UserEmail = "novoteste@teste.com"
-  let UserPassword = "12345678"
-                                                            
-  auth.setPersistence(firebase.auth.Auth.Persistence.Local).then(() => {
+let UserEmail = "novoteste@teste.com"
+let UserPassword = "12345678"
+                                                          
+auth.setPersistence(firebase.auth.Auth.Persistence.Local).then(() => {
 
-    auth.signInWithEmailAndPassword(UserEmail, UserPassword)
-    .then(loggedUser => {
-      console.log(auth.currentUser);
-    }).catch(error => {
-      console.log(error);
-    })
+  auth.signInWithEmailAndPassword(UserEmail, UserPassword)
+  .then(loggedUser => {
+    console.log(auth.currentUser);
   }).catch(error => {
-      console.log(error);
-  })  
+    console.log(error);
+  })
+}).catch(error => {
+    console.log(error);
+})  
 
 }
 login()
 
 
 function logout() {
-  auth.signOut().then().catch(error => {
-    console.log(error);
-    })
+auth.signOut().then().catch(error => {
+  console.log(error);
+  })
 }
 
 setTimeout(logout, 2000)
 
 
-  let userOnline = auth.currentUser
-  console.log(userOnline);
+let userOnline = auth.currentUser
+console.log(userOnline);
 
 
 
 //add data of new peaple in firebase
 database.collection("data-glucose").doc("new-person").update({
-  name: "teste",
-  glucose: 23
+name: "teste",
+glucose: 23
 }).then(() => {
-  console.log("Informações inseridas com sucesso");
+console.log("Informações inseridas com sucesso");
 }).catch(err=>{ 
-  console.log(err);
+console.log(err);
 })
 
 
@@ -107,7 +107,7 @@ database.collection("data-glucose").doc("new-person").update({
 
 
 
-  
+
 // catching data from collection "data-glucose" with js
 
 // database.collection("data-glucose").get()
@@ -123,13 +123,14 @@ database.collection("data-glucose").doc("new-person").update({
 // catch name and glucose and sending to the firebase
 // after "writen", n=name  g=glucose 
 
+
 let writen = ""
 let writeg = ""
 
 function sendName() {
-  writen = document.getElementById("name-person").value
-  document.getElementById("writen").innerHTML = writen  
-  //glucose
-  writeg = document.getElementById("glucose-person").value
-  document.getElementById("writeg").innerHTML = writeg
+writen = document.getElementById("name-person").value
+document.getElementById("writen").innerHTML = writen  
+//glucose
+writeg = document.getElementById("glucose-person").value
+document.getElementById("writeg").innerHTML = writeg
 }
