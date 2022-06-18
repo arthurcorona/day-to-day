@@ -5,7 +5,7 @@
 
 body{
     display: relative;
-    background-color: rgb(207, 207, 152);
+    background-color: #b5f4bc;
 }
 
 #container {
@@ -14,8 +14,9 @@ body{
 }
 
 .tela-login{
-    width: 200px;
-    background-color: aqua;
+    width: 250px;
+    text-align: center;
+    background-color: #ffba6b;
     border-radius: 15px;
     padding: 20px;
     margin: 5%;
@@ -49,15 +50,15 @@ input{
 }
 
 .input-submit {
-    background-color: orangered;
+    background-color: #ffdc8a;
 }
 
 .input-submit:hover {
-    background-color: orange;
+    background-color: #fff19e;
 }
 
 input:hover {
-    background-color: rgb(136, 148, 199);
+    background-color: #ffdc8a;
 }
 
 #box-cadastro {

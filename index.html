@@ -16,18 +16,23 @@ gravando a glicose delas, e avisando quando estiver baixa/quando deve comer -->
         <div id="box-cadastro" class="tela-login">
 
             <h2 class="subtitle">Sign Up</h2>
-            <input id="new-name" type="text" name="name" value="name">
-            <input id="new-email" type="email" name="email" value="email"> 
-            <input id="new-password" type="password" name="password" value="password">
+            <h4>Name:</h4>
+            <input id="new-name" type="text" name="name" value="">
+            <h4>Email:</h4>
+            <input id="new-email" type="email" name="email" value=""> 
+            <h4>Password:</h4>
+            <input id="new-password" type="password" name="password" value="">
+            
             <p>Já tem uma conta?? <b class="click" onclick="entre()">Entre</b></p>
             <input class="input-submit" type="submit" onclick="createUser()">
         </div>
 
         <div id="box-login" class="tela-login">
             <h2 class="subtitle">Login</h2>
-            <input id="name" type="text" name="name" value="name">
-            <input id="email" type="email" name="email" value="email">
-            <input id="password" type="password" name="password" value="password">
+            <h4>Email:</h4>
+            <input id="email" type="email" name="email" value="">
+            <h4>Password:</h4>
+            <input id="password" type="password" name="password" value="">
             <input class="input-submit" type="submit" onclick="login()">
         </div>
 
