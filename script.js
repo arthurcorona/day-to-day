@@ -11,28 +11,60 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig)
 let database = firebase.firestore()
+let auth = firebase.auth()
 
-// //create new user in firebase
-
-//function createUser() {
-  // let newUserEmail = "novoteste@teste.com"
-  // let newUserPassword = "12345678"  
- 
-  // firebase.auth().createUserWithEmailAndPassword(newUserEmail, newUserPassword)
-  //       .then(user => {
-  //         console.log(user);
-  //       }).catch(error => {
-  //         alert("A senha deve conter no minímo 6 caracteres")
-
-  //       })
-//}
-
-// // function que vai mostrar a tela de login
+// // function que vai mostrar a tela de login caso a pessoa ja criou a conta
 
 function entre() {
   document.getElementById("box-login").style.display = 'inline-block'  
   document.getElementById("box-cadastro").style.display = 'none'
 }
+
+//fazer o cadastro / signIn
+
+function createUser() {
+  let newUserEmail = document.getElementById("new-email")
+  let newUserPassword = document.getElementById("new-password")
+ 
+         auth.createUserWithEmailAndPassword(newUserEmail, newUserPassword)
+        .then(user => {
+          console.log(user);
+        }).catch(error => {
+          alert("Preencha os dados corretamente. A senha deve conter no minímo 6 caracteres!")
+
+        })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // show user online and offline:
@@ -124,13 +156,13 @@ console.log(err);
 // after "writen", n=name  g=glucose 
 
 
-let writen = ""
-let writeg = ""
+// let writen = ""
+// let writeg = ""
 
-function sendName() {
-writen = document.getElementById("name-person").value
-document.getElementById("writen").innerHTML = writen  
-//glucose
-writeg = document.getElementById("glucose-person").value
-document.getElementById("writeg").innerHTML = writeg
-}
+// function sendName() {
+// writen = document.getElementById("name-person").value
+// document.getElementById("writen").innerHTML = writen  
+// //glucose
+// writeg = document.getElementById("glucose-person").value
+// document.getElementById("writeg").innerHTML = writeg
+// }
