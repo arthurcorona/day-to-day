@@ -10,8 +10,11 @@ const firebaseConfig = {
 }
 
 firebase.initializeApp(firebaseConfig)
-let database = firebase.firestore()
-let auth = firebase.auth()
+
+const database = firebase.firestore() // banco de dados fireabse
+const auth = firebase.auth() //authenticator firebase
+const storage = firebase.storage() 
+const ref = storage.ref() // referencia para a pasta raiz do storage no firebase, da pra especificar ainda mais o arquivo preenchendo o ()
 
 // // function que vai mostrar a tela de login caso a pessoa ja criou a conta
 
@@ -35,7 +38,11 @@ function createUser() {
         })
 }
 
+//teste
 
+ref.listAll().then(res => {
+  console.log(res.items);
+})
 
 
 
