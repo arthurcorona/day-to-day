@@ -33,69 +33,40 @@ function createUser() {
         .then(user => {
           console.log(user);
         }).catch(error => {
+          console.log("deu errado");
           alert("Preencha os dados corretamente. A senha deve conter no minímo 6 caracteres!")
-
         })
 }
 
-//teste
+
+function login() {
+
+  let UserEmail = document.getElementById("email")
+  let UserPassword = document.getElementById("password")
+
+  auth.setPersistence(firebase.auth.Auth.Persistence.Local).then(() => {
+  
+    auth.signInWithEmailAndPassword(UserEmail, UserPassword)
+    .then(loggedUser => {
+      console.log(auth.currentUser);
+    }).catch(error => {
+      console.log(error);
+    })
+  }).catch(error => {
+      console.log(error);
+  })  
+  
+  }
+
+  
+//teste pegando os itens do storage
 
 ref.listAll().then(res => {
   console.log(res.items);
 })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // show user online and offline:
-
-function login() {
-
-let UserEmail = "novoteste@teste.com"
-let UserPassword = "12345678"
-                                                          
-auth.setPersistence(firebase.auth.Auth.Persistence.Local).then(() => {
-
-  auth.signInWithEmailAndPassword(UserEmail, UserPassword)
-  .then(loggedUser => {
-    console.log(auth.currentUser);
-  }).catch(error => {
-    console.log(error);
-  })
-}).catch(error => {
-    console.log(error);
-})  
-
-}
-login()
-
 
 function logout() {
 auth.signOut().then().catch(error => {
