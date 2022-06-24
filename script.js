@@ -26,14 +26,14 @@ function entre() {
 //fazer o cadastro / signIn
 
 function createUser() {
-  let newUserEmail = document.getElementById("new-email")
-  let newUserPassword = document.getElementById("new-password")
+  let newUserEmail = document.getElementById("new-email").value
+  let newUserPassword = document.getElementById("new-password").value
  
          auth.createUserWithEmailAndPassword(newUserEmail, newUserPassword)
-        .then(user => {
+        .then((user) => {
           console.log(user);
         }).catch(error => {
-          console.log("deu errado");
+          console.log("deu errado", error);
           alert("Preencha os dados corretamente. A senha deve conter no minímo 6 caracteres!")
         })
 }
@@ -41,10 +41,10 @@ function createUser() {
 
 function login() {
 
-  let UserEmail = document.getElementById("email")
-  let UserPassword = document.getElementById("password")
+  let UserEmail = document.getElementById("email").value
+  let UserPassword = document.getElementById("password").value
 
-  auth.setPersistence(firebase.auth.Auth.Persistence.Local).then(() => {
+  auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).then(() => {
   
     auth.signInWithEmailAndPassword(UserEmail, UserPassword)
     .then(loggedUser => {
