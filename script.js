@@ -14,7 +14,8 @@ firebase.initializeApp(firebaseConfig)
 const database = firebase.firestore() // banco de dados fireabse
 const auth = firebase.auth() //authenticator firebase
 const storage = firebase.storage() 
-const ref = storage.ref() // referencia para a pasta raiz do storage no firebase, da pra especificar ainda mais o arquivo preenchendo o ()
+const ref = storage.ref("/glucose") // referencia para a pasta raiz do storage no firebase, da pra especificar ainda mais o arquivo preenchendo o ()
+
 
 // // function que vai mostrar a tela de login caso a pessoa ja criou a conta
 
@@ -52,11 +53,9 @@ function login() {
     }).catch(error => {
       console.log(error);
     })
-  }).catch(error => {
-      console.log(error);
-  })  
-  
+  }) 
   }
+
 
   
 //teste pegando os itens do storage
@@ -86,15 +85,24 @@ console.log(userOnline);
 database.collection("data-glucose").doc("new-person").update({
 name: "teste",
 glucose: 23
-}).then(() => {
+}).then(() => { //fazer um if informacoes inseridas, caso nao dê error
 console.log("Informações inseridas com sucesso");
 }).catch(err=>{ 
 console.log(err);
 })
 
+//upload +
 
+const fileInput = document.getElementById("fileInput")
 
-
+fileInput.addEventListener("change", (evento)=>{
+  const file = evento.target.files[0]
+  ref.child.put(file.name).then((snapshot) => {
+    console.log(snapshot);
+  })
+  
+  
+})
 
 
 
