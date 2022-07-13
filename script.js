@@ -101,7 +101,6 @@ fileInput.addEventListener("change", (evento)=>{
     console.log(snapshot);
   })
   
-  
 })
 
 
