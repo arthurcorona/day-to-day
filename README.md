@@ -1,3 +1,3 @@
-# project-crn
+## Free to use! Good Luck.
 
-em desenvolvimento.
+This is a repository with several scripts used in everyday life to facilitate their creation and use
