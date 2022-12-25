@@ -1,0 +1,70 @@
+// You should go to folder "snippets", in code edit, and create a file "counter.liquid". 
+// !!!!!! READ THE END   !!!!! 
+
+{% assign productTags = product.tags %}  
+{% if productTags contains 'counter1' %} <!-- You must apply 'counter1' to each product that wants the counter  -->
+<script>
+  function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+      minutes = parseInt(timer / 60, 10)
+      seconds = parseInt(timer % 60, 10);
+
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+
+      display.textContent = "00" + ":" + minutes + ":" + seconds;
+
+      if (--timer < 0) {
+        timer = duration;
+      }
+    }, 1000);
+  }
+
+  window.onload = function () {
+    var fiveMinutes = 60 * 29.5,                  /* Time */
+        display = document.querySelector('#time');
+    startTimer(fiveMinutes, display);
+  };
+</script>
+    
+<div class="countdown">
+<p class="text"><i><img src="https://cdn.shopify.com/s/files/1/0265/4414/4459/files/urgency_1_480x480.png?v=1647206352" alt="" width="40" height="40" data-mce-fragment="1" data-mce-src="https://cdn.shopify.com/s/files/1/0265/4414/4459/files/urgency_1_480x480.png?v=1647206352"></i><span style="color:white; padding-left: 5px;"> Corra! A promoção acaba em</span> <span id="time"></span></p> 
+</div>
+    
+<style>
+.countdown{
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+    margin: 1em 0 2em;
+    border: 2px double #000000; /* border */
+    padding: 2px;
+    line-height: 2.4;
+    background: #000000;        /* background color */
+    border: double;
+    box-shadow: 0 0 8px rgba(0,0,0,.5); 
+}
+
+.countdown p > span{
+  	color: #fbd60c;
+	font-weight:900; 
+}
+
+.countdown p > i > svg {
+    width: 18px;
+    top: 4px;
+    position: relative;
+}
+
+.countdown > p.text
+{
+    text-align: center;
+    font-weight: 900;
+} 
+</style>
+{% endif %}
+
+//Y ou can add this script directly where the product theres, but i like to separate, and just call this function with:
+{% render 'counter' %}}
+//where I want to add it, in any other folder or file
