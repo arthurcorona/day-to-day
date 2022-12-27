@@ -1,0 +1,16 @@
+<div style="display: block; margin-left: auto; margin-right: auto;text-align: center; font-size: 20px; font-weight: normal; padding: .7rem;">A PROMOÇÃO ENCERRAM EM: </div>
+<div style="display: block; margin-left: auto; margin-right: auto; color:#fff; background-color: #000;text-align: center; font-size: 20px; font-weight: normal; padding: 1rem; border: #000000; border-style: solid;" id="dday"></div>
+
+<script> 
+
+let countDownDate = new Date("January 25, 2023 00:00:00").getTime();
+let x = setInterval(function() {var now = new Date().getTime()
+let distance = countDownDate - now;
+let days = Math.floor(distance / (1000 * 60 * 60 * 24)); var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+document.getElementById("dday").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+if (distance < 0) { clearInterval(x); document.getElementById("dday").innerHTML = "A PROMOÇÃO ACABOU!"; } }, 1000);
+
+</script>
+</body>
